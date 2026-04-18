@@ -21,7 +21,7 @@ except ImportError:
         sys.exit(1)
 
 # ------------------------------------------------------------------------------
-# 2. 系统API调用 - 准确获取用户文档路径
+# 2. 系统API调用 - 获取用户名文件夹名字的文档路径
 # ------------------------------------------------------------------------------
 class GUID(ctypes.Structure):
     _fields_ = [("Data1", wintypes.DWORD),
@@ -44,7 +44,7 @@ def get_documents_path():
     return path
 
 # ------------------------------------------------------------------------------
-# 3. 辅助函数：创建快捷方式
+# 3. 创建快捷方式
 # ------------------------------------------------------------------------------
 def create_shortcut(target_path, shortcut_location, arguments="", working_dir=""):
     shell = win32com.client.Dispatch("WScript.Shell")
@@ -59,7 +59,7 @@ def create_shortcut(target_path, shortcut_location, arguments="", working_dir=""
 # ------------------------------------------------------------------------------
 def main():
     print("="*40)
-    print("   桌面整理工具 - 智能配置器")
+    print("   桌面整理工具 - 一键配置")
     print("="*40)
 
     # --- 步骤 1: 确定路径 ---
@@ -94,8 +94,7 @@ def main():
     # --- 步骤 3: 生成主程序脚本 (temp_desktop_cleaner.py) ---
     print(f"[3/7] 生成整理脚本...")
     
-    # 这里是你原来的脚本代码，但是用变量替换了硬编码路径
-    # 注意：使用了 {{ 和 }} 来转义原脚本中的字符串格式化符号
+
     cleaner_code = f'''import os
 import shutil
 import sys
