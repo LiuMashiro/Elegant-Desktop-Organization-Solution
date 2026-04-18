@@ -1,0 +1,2 @@
+# Elegant-Desktop-Organization-Solution
+一种支持Wallpaper Engine动态壁纸、高斯模糊和定期清理临时文件区的优雅整洁桌面整理方案
